@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LinkedIn Login, Sign in | LinkedIn</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f2ef;
+        }
+        .nav-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 24px;
+            background-color: white;
+            box-shadow: 0 0 0 1px rgba(0,0,0,0.08);
+        }
+        .logo {
+            height: 30px;
+        }
+        .container {
+            max-width: 1128px;
+            margin: 0 auto;
+            padding: 40px 0;
+            display: flex;
+            align-items: center;
+        }
+        .hero-section {
+            flex: 1;
+            padding-right: 42px;
+        }
+        .form-section {
+            width: 400px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            padding: 24px;
+        }
+        .hero-title {
+            font-size: 56px;
+            color: #8f5849;
+            font-weight: 200;
+            line-height: 70px;
+            margin-bottom: 40px;
+        }
+        .form-title {
+            font-size: 32px;
+            line-height: 1.25;
+            font-weight: 600;
+            color: rgba(0,0,0,0.9);
+            margin-bottom: 24px;
+        }
+        .form-group {
+            margin-bottom: 12px;
+        }
+        .form-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: rgba(0,0,0,0.75);
+            display: block;
+            margin-bottom: 4px;
+        }
+        .form-input {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            line-height: 1.5;
+            border: 1px solid rgba(0,0,0,0.6);
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .form-input:focus {
+            border-color: #0a66c2;
+            box-shadow: 0 0 0 1px #0a66c2;
+            outline: none;
+        }
+        .forgot-password {
+            font-size: 16px;
+            font-weight: 600;
+            color: #0a66c2;
+            text-decoration: none;
+            margin-top: 16px;
+            display: inline-block;
+        }
+        .signin-button {
+            width: 100%;
+            background-color: #0a66c2;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 12px;
+            border: none;
+            border-radius: 24px;
+            margin-top: 24px;
+            cursor: pointer;
+        }
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .divider::before, .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid rgba(0,0,0,0.15);
+        }
+        .divider-text {
+            padding: 0 10px;
+            color: rgba(0,0,0,0.6);
+        }
+        .google-button {
+            width: 100%;
+            background-color: white;
+            color: rgba(0,0,0,0.75);
+            font-size: 16px;
+            font-weight: 600;
+            padding: 12px;
+            border: 1px solid rgba(0,0,0,0.6);
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            margin-bottom: 16px;
+        }
+        .google-icon {
+            margin-right: 8px;
+            width: 18px;
+            height: 18px;
+        }
+        .signup-prompt {
+            text-align: center;
+            margin-top: 24px;
+            font-size: 16px;
+            color: rgba(0,0,0,0.9);
+        }
+        .signup-link {
+            color: #0a66c2;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                padding: 24px;
+            }
+            .hero-section {
+                padding-right: 0;
+                margin-bottom: 24px;
+                text-align: center;
+            }
+            .hero-title {
+                font-size: 32px;
+                line-height: 1.2;
+                margin-bottom: 24px;
+            }
+            .form-section {
+                width: 100%;
+                max-width: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="nav-bar">
+        <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 84 21" fill="none">
+            <g fill="#0a66c2">
+                <path d="M12.5 2.03125C17.6562 2.03125 21.9688 6.34375 21.9688 11.5C21.9688 16.6875 17.6562 21 12.5 21C7.3125 21 3 16.6875 3 11.5C3 6.34375 7.3125 2.03125 12.5 2.03125ZM12.5 0C6.15625 0 1 5.15625 1 11.5C1 17.875 6.15625 23 12.5 23C18.8125 23 24 17.875 24 11.5C24 5.15625 18.8125 0 12.5 0Z"/>
+                <path d="M9.875 15.75H7.375V8.375H9.875V15.75ZM8.625 7.21875C7.8125 7.21875 7.125 6.5625 7.125 5.75C7.125 4.96875 7.8125 4.28125 8.625 4.28125C9.40625 4.28125 10.0938 4.96875 10.0938 5.75C10.0938 6.5625 9.40625 7.21875 8.625 7.21875ZM16.5938 15.75H14.0938V12.125C14.0938 11.0312 14.0938 9.65625 12.625 9.65625C11.125 9.65625 10.9062 10.8125 10.9062 12V15.75H8.40625V8.375H10.8125V9.5H10.8438C11.2188 8.84375 12.0625 8.15625 13.3438 8.15625C15.875 8.15625 16.5938 9.9375 16.5938 12.25V15.75Z"/>
+            </g>
+            <g fill="black">
+                <path d="M29.5 15.75H35.0938V13.625H32.0312V7.5H29.5V15.75Z"/>
+                <path d="M36 9.96875C36 12.2812 37.5 13.9062 39.9688 13.9062C41.25 13.9062 42.1562 13.5 42.7812 12.6875H42.8125V13.75C42.8125 15.0625 41.9375 15.9375 40.4062 15.9375C39.125 15.9375 38.4062 15.3125 38.1875 14.5H35.6562C35.9062 16.625 37.7812 18.0625 40.3438 18.0625C43.5312 18.0625 45.2812 16.1562 45.2812 12.9688V6.25H42.875V7.28125H42.8438C42.25 6.46875 41.3125 5.96875 40.0312 5.96875C37.5938 5.96875 36 7.65625 36 9.96875ZM42.9375 9.96875C42.9375 11.3125 41.9375 12.2188 40.5938 12.2188C39.25 12.2188 38.25 11.3125 38.25 9.96875C38.25 8.65625 39.2812 7.71875 40.5938 7.71875C41.9062 7.71875 42.9375 8.625 42.9375 9.96875Z"/>
+                <path d="M47.25 18H49.7812V13.7188H49.8125C50.375 14.5312 51.3125 15.0312 52.5938 15.0312C55.0312 15.0312 56.625 13.2812 56.625 10.5312C56.625 7.71875 55.0312 5.96875 52.5625 5.96875C51.25 5.96875 50.3438 6.5 49.7188 7.3125H49.6875V6.25H47.25V18ZM54.375 10.5312C54.375 12.125 53.375 13.2812 52 13.2812C50.6562 13.2812 49.625 12.125 49.625 10.5312C49.625 8.9375 50.6562 7.75 52.0312 7.75C53.375 7.75 54.375 8.9375 54.375 10.5312Z"/>
+                <path d="M58.5 15.75H61.0312V6.25H58.5V15.75ZM59.75 4.96875C60.5312 4.96875 61.1562 4.375 61.1562 3.65625C61.1562 2.90625 60.5312 2.3125 59.75 2.3125C59 2.3125 58.375 2.90625 58.375 3.65625C58.375 4.375 59 4.96875 59.75 4.96875Z"/>
+                <path d="M63 6.25V15.75H65.5312V9.8125C65.5312 8.5 66.4688 7.625 67.7812 7.625C69.0625 7.625 69.8438 8.4375 69.8438 9.6875V15.75H72.375V9.3125C72.375 7.21875 70.9688 5.96875 68.9375 5.96875C67.5938 5.96875 66.4062 6.5625 65.875 7.5H65.8438V6.25H63Z"/>
+                <path d="M79.125 13.7812C78.125 13.7812 77.5 14.4375 77.5 15.2812C77.5 16.125 78.125 16.75 79.125 16.75C80.0625 16.75 80.7188 16.125 80.7188 15.2812C80.7188 14.4375 80.0625 13.7812 79.125 13.7812Z"/>
+            </g>
+        </svg>
+    </header>
+    
+    <main class="container">
+        <div class="hero-section">
+            <h1 class="hero-title">Welcome to your professional community</h1>
+        </div>
+        
+        <div class="form-section">
+            <h2 class="form-title">Sign in</h2>
+            <form action="login.php" method="post">
+                <div class="form-group">
+                    <label class="form-label" for="email">Email or Phone</label>
+                    <input id="email" name="email" type="text" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="password">Password</label>
+                    <input id="password" name="password" type="password" class="form-input" required>
+                </div>
+                
+                <a href="#" class="forgot-password">Forgot password?</a>
+                
+                <button type="submit" class="signin-button">Sign in</button>
+            </form>
+            
+            <div class="divider">
+                <span class="divider-text">or</span>
+            </div>
+            
+            <button class="google-button">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOHB4IiBoZWlnaHQ9IjE4cHgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgY2xhc3M9IiI+CiAgICA8ZGVmcz4KICAgICAgICA8cGF0aCBpZD0iYSIgZD0iTTQ0LjUgMjBIMjR2OC41aDExLjhDMzQuNyAzMyAzMC4yIDM3IDI0IDM3Yy03LjIgMC0xMy01LjgtMTMtMTNzNS44LTEzIDEzLTEzYzMuMSAwIDUuOSAxLjEgOC4xIDIuOWw2LjQtNi40QzM0LjYgNC4xIDI5LjYgMiAyNCAyIDExLjggMiAyIDExLjggMiAyNHM5LjggMjIgMjIgMjJjMTEgMCAyMS04IDIxLTIyIDAtMS4zLS4yLTIuNy0uNS00eiIvPgogICAgPC9kZWZzPgogICAgPGNsaXBQYXRoIGlkPSJiIj4KICAgICAgICA8dXNlIHhsaW5rOmhyZWY9IiNhIiBvdmVyZmxvdz0idmlzaWJsZSIvPgogICAgPC9jbGlwUGF0aD4KICAgIDxwYXRoIGNsaXAtcGF0aD0idXJsKCNiKSIgZmlsbD0iI0ZCQkMwNSIgZD0iTTAgMzdWMTFsMTcgMTN6Ii8+CiAgICA8cGF0aCBjbGlwLXBhdGg9InVybCgjYikiIGZpbGw9IiNFQTQzMzUiIGQ9Ik0wIDExbDE3IDEzIDctNi4xTDQ4IDE0VjBIMHoiLz4KICAgIDxwYXRoIGNsaXAtcGF0aD0idXJsKCNiKSIgZmlsbD0iIzM0QTg1MyIgZD0iTTAgMzdsMzAtMjMgNy43IDEgMTAuMy0xNXY0OEgweiIvPgogICAgPHBhdGggY2xpcC1wYXRoPSJ1cmwoI2IpIiBmaWxsPSIjNDI4NUY0IiBkPSJNNDggNDhMMTcgMjRsLTQtM0wwIDExdjI2eiIvPgo8L3N2Zz4=" alt="Google" class="google-icon">
+                Sign in with Google
+            </button>
+            
+            <p class="signup-prompt">
+                New to LinkedIn? <a href="#" class="signup-link">Join now</a>
+            </p>
+        </div>
+    </main>
+</body>
+</html>
