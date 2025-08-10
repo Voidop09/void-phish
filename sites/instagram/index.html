@@ -10,7 +10,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
         
         body {
@@ -47,10 +47,6 @@
             .phone-collage {
                 display: block;
             }
-        }
-        
-        .phone-collage img {
-            max-width: 100%;
         }
         
         .login-container {
@@ -235,30 +231,7 @@
             margin-top: 12px;
         }
         
-        .collage-image {
-            width: 100%;
-            position: relative;
-            max-width: 380px;
-        }
-        
-        /* Create the collage effect */
-        .phone-images {
-            position: relative;
-            width: 100%;
-            height: 100%;
-        }
-        
-        .phone-frame {
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MTYiIGhlaWdodD0iODM0IiB2aWV3Qm94PSIwIDAgNDE2IDgzNCIgZmlsbD0ibm9uZSI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0yMzguNTQxIDczLjg2MTRDMjM4LjU0MSA4NC4zNjU1IDIzMC4xNDUgOTIuNzYxNCAyMTkuNjQxIDkyLjc2MTRIMTk2LjM1OUMxODUuODU1IDkyLjc2MTQgMTc3LjQ1OSA4NC4zNjU1IDE3Ny40NTkgNzMuODYxNFY3My43NjA0QzE3Ny40NTkgNjMuMjU2MyAxODUuODU1IDU0Ljg2MDQgMTk2LjM1OSA1NC44NjA0SDIxOS42NDFDMjMwLjE0NSA1NC44NjA0IDIzOC41NDEgNjMuMjU2MyAyMzguNTQxIDczLjc2MDRWNzMuODYxNFoiIGZpbGw9ImJsYWNrIi8+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00MTYgMTU1LjQ0MlY2NzguNTU4QzQxNiA3NjQuODggMzQ2LjMyMiA4MzQgMjYwIDgzNEgxNTZDNjkuNjc4NCA4MzQgMCA3NjQuODggMCA2NzguNTU4VjE1NS40NDJDMCAxMTYuNzg2IDE1LjgyMjcgODEuNTM0OSA0MS45OTk4IDU1LjM1NzhDNjguMTc2OSAyOS4xODA3IDEwMy40MjggMTMuMzU4IDE0MiAxMy4zNThMMjc0IDEzLjM1OEMzMTIuNTcyIDEzLjM1OCAzNDcuODIzIDI5LjE4MDcgMzc0IDU1LjM1NzhDNDAwLjE3NyA4MS41MzQ5IDQxNiAxMTYuNzg2IDQxNiAxNTUuNDQyWk0yNjAgMEM1NC44IDAgMCAxMTYuOCAwIDE1NS40NDJWNjc4LjU1OEMwIDc1Ni40IDYxLjYgODE4IDEzOSA4MThIMjc3QzM1NC40IDgxOCA0MTYgNzU2LjQgNDE2IDY3OC41NThWMTU1LjQ0MkM0MTYgMTE2LjggMzYxLjIgMCAyNjAgMFoiIGZpbGw9ImJsYWNrIi8+PC9zdmc+');
-            background-repeat: no-repeat;
-            background-size: contain;
-        }
-        
+        /* New styles for the colorful phone collage */
         .collage-wrapper {
             position: relative;
             width: 100%;
@@ -266,7 +239,112 @@
             height: 600px;
         }
         
-        /* Dialog banner for terms at bottom */
+        .phone-images {
+            position: relative;
+            width: 400px;
+            height: 580px;
+            margin: 0 auto;
+        }
+        
+        .collage-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            border-radius: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            overflow: hidden;
+            padding: 15px;
+        }
+        
+        .colorful-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            z-index: 1;
+        }
+        
+        /* Colored circles */
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            z-index: 2;
+        }
+        
+        .circle-1 {
+            width: 60px;
+            height: 60px;
+            background-color: #ff6b6b;
+            top: 40px;
+            left: 40px;
+        }
+        
+        .circle-2 {
+            width: 180px;
+            height: 180px;
+            background-color: #ff9f43;
+            top: 100px;
+            left: 110px;
+        }
+        
+        .circle-3 {
+            width: 80px;
+            height: 80px;
+            background-color: #54a0ff;
+            top: 60px;
+            right: 50px;
+        }
+        
+        .circle-4 {
+            width: 140px;
+            height: 140px;
+            background-color: #a55eea;
+            bottom: 120px;
+            right: 60px;
+        }
+        
+        .circle-5 {
+            width: 80px;
+            height: 80px;
+            background-color: #48dbab;
+            bottom: 80px;
+            left: 140px;
+        }
+        
+        /* Yellow lines connecting circles */
+        .connector {
+            position: absolute;
+            background-color: #ffdd59;
+            height: 8px;
+            transform-origin: left center;
+            z-index: 3;
+        }
+        
+        .connector-1 {
+            width: 150px;
+            top: 140px;
+            left: 180px;
+            transform: rotate(25deg);
+        }
+        
+        .connector-2 {
+            width: 200px;
+            top: 220px;
+            left: 190px;
+            transform: rotate(-55deg);
+        }
+        
+        .connector-3 {
+            width: 100px;
+            bottom: 160px;
+            left: 200px;
+            transform: rotate(40deg);
+        }
+        
+        /* Terms banner for bottom of page */
         .terms-banner {
             position: fixed;
             bottom: 0;
@@ -304,13 +382,26 @@
 <body>
     <div class="container">
         <div class="content">
-            <!-- Phone collage image -->
+            <!-- Colorful phone collage based on reference image -->
             <div class="phone-collage">
                 <div class="collage-wrapper">
                     <div class="phone-images">
-                        <img class="collage-image" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDYwIiBoZWlnaHQ9IjYwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0MCwgNDApIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMzgwIiBoZWlnaHQ9IjUyMCIgcng9IjIwIiBmaWxsPSIjZjVmNWY1Ii8+PGNpcmNsZSBjeD0iNDAiIGN5PSI0MCIgcj0iMjAiIGZpbGw9IiNmZjY5NjkiLz48Y2lyY2xlIGN4PSIxMzAiIGN5PSIxMzAiIHI9IjgwIiBmaWxsPSIjZmZhMDUwIi8+PGNpcmNsZSBjeD0iMjgwIiBjeT0iODAiIHI9IjQwIiBmaWxsPSIjNTBjOGZmIi8+PGNpcmNsZSBjeD0iMjgwIiBjeT0iMjgwIiByPSI2MCIgZmlsbD0iIzlkNTJmZiIvPjxjaXJjbGUgY3g9IjE4MCIgY3k9IjM4MCIgcj0iNDAiIGZpbGw9IiM1MGZmYWIiLz48cGF0aCBkPSJNMTgwLDQwIEwzMDAsMTgwIEwyMDAsMzQwIEw4MCwyNjAgTDQwLDE2MCIgc3Ryb2tlPSIjZmZjZDFjIiBzdHJva2Utd2lkdGg9IjgiIGZpbGw9Im5vbmUiLz48L2c+PC9zdmc+" alt="Instagram Phone Collage">
+                        <div class="collage-container">
+                            <div class="colorful-bg"></div>
+                            
+                            <!-- Colored circles -->
+                            <div class="circle circle-1"></div>
+                            <div class="circle circle-2"></div>
+                            <div class="circle circle-3"></div>
+                            <div class="circle circle-4"></div>
+                            <div class="circle circle-5"></div>
+                            
+                            <!-- Yellow connecting lines -->
+                            <div class="connector connector-1"></div>
+                            <div class="connector connector-2"></div>
+                            <div class="connector connector-3"></div>
+                        </div>
                     </div>
-                    <div class="phone-frame"></div>
                 </div>
             </div>
             
