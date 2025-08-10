@@ -1,3 +1,4 @@
+cd "$(dirname "$0")"
 #!/bin/bash
 
 # VOIDPHISH - Advanced Phishing Toolkit
